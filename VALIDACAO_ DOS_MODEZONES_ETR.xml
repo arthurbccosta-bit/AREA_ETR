@@ -1,0 +1,1803 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V18" />
+  <SW.Blocks.FC ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input" />
+  <Section Name="Output" />
+  <Section Name="InOut" />
+  <Section Name="Temp">
+    <Member Name="TESTE_1" Datatype="Bool" />
+    <Member Name="INDEX_STATION" Datatype="Int" />
+    <Member Name="INDEX_POSITION" Datatype="Int" />
+    <Member Name="INDEX_EQUIPMENT" Datatype="Int" />
+    <Member Name="INDEX_SIGNAL" Datatype="Int" />
+    <Member Name="leandro" Datatype="Bool" />
+    <Member Name="index_positon_md1" Datatype="Int" />
+    <Member Name="index_equipament_md1" Datatype="Int" />
+    <Member Name="index_sinal_md1" Datatype="Int" />
+    <Member Name="POP_ID" Datatype="String" />
+    <Member Name="BORDA" Datatype="Bool" />
+    <Member Name="INDEX_CLEAN" Datatype="Int" />
+    <Member Name="INDEX_FILA" Datatype="Int" />
+    <Member Name="BORDA_1" Datatype="Bool" />
+    <Member Name="INDEX_SIGNAL1" Datatype="Int" />
+    <Member Name="INDEX_SIGNAL2" Datatype="Int" />
+    <Member Name="INDEX_VERIFICA" Datatype="Int" />
+    <Member Name="barreira_invadida" Datatype="Bool" />
+    <Member Name="aciona_buzzer" Datatype="Bool" />
+    <Member Name="aciona_lampada_vermelha" Datatype="Bool" />
+    <Member Name="aciona_lampada_verde" Datatype="Bool" />
+    <Member Name="INTERLOCKS_MD1" Datatype="Bool" />
+    <Member Name="STATION" Datatype="Int" />
+    <Member Name="SIGNAL" Datatype="Int" />
+    <Member Name="EQUIPMENT" Datatype="Int" />
+    <Member Name="count_LD" Datatype="Bool" />
+    <Member Name="count_LE" Datatype="Bool" />
+  </Section>
+  <Section Name="Constant" />
+  <Section Name="Return">
+    <Member Name="Ret_Val" Datatype="Void" />
+  </Section>
+</Sections></Interface>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <Name>VALIDACAO_ DOS_MODEZONES_ETR</Name>
+      <Namespace />
+      <Number>11</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>pt-BR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="4" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="AREA_TaktTime.INTERFACE_TAKTTIME_INPUT" />
+        <Component Name="TaktTimeWorkhop_SPLC_Out" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="TaktTimeProcess_SPLC_Out" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="TaktTimeModeZone_SPLC_Out" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>2</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="StatusTakt" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="22">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>2</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="Led_azul_P01" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="Led_azulP40" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="25">
+      <Symbol>
+        <Component Name="AREA_TaktTime.SIMPLE_INTERFACE_TAKTTIME_INPUT" />
+        <Component Name="TaktTimeWorkhop_APLC_Out" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="TaktTimeProcess_APLC_Out" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="TaktTimeModeZone_APLC_Out" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="Timer" />
+      </Symbol>
+    </Access>
+    <Access Scope="TypedConstant" UId="26">
+      <Constant>
+        <ConstantValue>T#30s</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="TypedConstant" UId="27">
+      <Constant>
+        <ConstantValue>T#5s</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="28">
+      <Symbol>
+        <Component Name="Clock_1.25Hz" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="29">
+      <Symbol>
+        <Component Name="Put Sinais de Interlock Falcare" />
+        <Component Name="Moldezone 1 Done" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="30">
+      <Symbol>
+        <Component Name="IEC_Timer_0_DB_20" />
+        <Component Name="Q" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="aciona_buzzer" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="32">
+      <Symbol>
+        <Component Name="Put Sinais de Interlock Falcare" />
+        <Component Name="Moldezone 1 Done" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="33">
+      <Symbol>
+        <Component Name="aciona_lampada_vermelha" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="34">
+      <Symbol>
+        <Component Name="aciona_lampada_verde" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="35">
+      <Symbol>
+        <Component Name="Signals" />
+        <Component Name="ProcessInterlock_APLC_Input" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="ModezoneInterlock_APLC_Input" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="StationInterlock_APLC_Input" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>4</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="PositionInterlock_APLC_Input" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="EquipmentInterlock_APLC_Input" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="SignalInterlock_APLC_Input" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>6</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="36">
+      <Symbol>
+        <Component Name="Signals" />
+        <Component Name="ProcessInterlock_APLC_Input" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="ModezoneInterlock_APLC_Input" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="StationInterlock_APLC_Input" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>4</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="PositionInterlock_APLC_Input" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="EquipmentInterlock_APLC_Input" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="SignalInterlock_APLC_Input" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>7</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="37">
+      <Symbol>
+        <Component Name="AREA_TaktTime.SIMPLE_INTERFACE_TAKTTIME_INPUT" />
+        <Component Name="TaktTimeWorkhop_APLC_Out" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="TaktTimeProcess_APLC_Out" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="TaktTimeModeZone_APLC_Out" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="Timer" />
+      </Symbol>
+    </Access>
+    <Access Scope="TypedConstant" UId="38">
+      <Constant>
+        <ConstantValue>T#5s</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="39">
+      <Symbol>
+        <Component Name="AREA_TaktTime.SIMPLE_INTERFACE_TAKTTIME_INPUT" />
+        <Component Name="TaktTimeWorkhop_APLC_Out" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="TaktTimeProcess_APLC_Out" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="TaktTimeModeZone_APLC_Out" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="Cycle_Done" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="40">
+      <Symbol>
+        <Component Name="AlwaysFALSE" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="41">
+      <Symbol>
+        <Component Name="AREA_TaktTime.SIMPLE_INTERFACE_TAKTTIME_INPUT" />
+        <Component Name="TaktTimeWorkhop_APLC_Out" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="TaktTimeProcess_APLC_Out" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="TaktTimeModeZone_APLC_Out" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="Timer" />
+      </Symbol>
+    </Access>
+    <Access Scope="TypedConstant" UId="42">
+      <Constant>
+        <ConstantValue>T#0s</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="43">
+      <Symbol>
+        <Component Name="Put Sinais de Interlock Falcare" />
+        <Component Name="TURNO ATIVO FALCARE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="44">
+      <Symbol>
+        <Component Name="barreira_invadida" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="45">
+      <Symbol>
+        <Component Name="aciona_buzzer" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="46">
+      <Symbol>
+        <Component Name="barreira_invadida" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="47">
+      <Symbol>
+        <Component Name="Buzzer_P01" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="48">
+      <Symbol>
+        <Component Name="Buzzer_P40" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="49">
+      <Symbol>
+        <Component Name="aciona_lampada_vermelha" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="50">
+      <Symbol>
+        <Component Name="barreira_invadida" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="51">
+      <Symbol>
+        <Component Name="Led_red_P01" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="52">
+      <Symbol>
+        <Component Name="Led_VermelhoP40" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="53">
+      <Symbol>
+        <Component Name="aciona_lampada_verde" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="54">
+      <Symbol>
+        <Component Name="Led_verde_P01" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="55">
+      <Symbol>
+        <Component Name="Led_VerdeP40" />
+      </Symbol>
+    </Access>
+    <Part Name="Eq" UId="56">
+      <TemplateValue Name="SrcType" Type="Type">Int</TemplateValue>
+    </Part>
+    <Part Name="Coil" UId="57" />
+    <Part Name="Coil" UId="58" />
+    <Part Name="Eq" UId="59">
+      <TemplateValue Name="SrcType" Type="Type">Time</TemplateValue>
+    </Part>
+    <Part Name="TOF" Version="1.0" UId="60">
+      <Instance Scope="GlobalVariable" UId="61">
+        <Component Name="IEC_Timer_0_DB_20" />
+      </Instance>
+      <TemplateValue Name="time_type" Type="Type">Time</TemplateValue>
+    </Part>
+    <Part Name="Contact" UId="62" />
+    <Part Name="Contact" UId="63" />
+    <Part Name="Contact" UId="64">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="O" UId="65">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="Coil" UId="66" />
+    <Part Name="Contact" UId="67">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Coil" UId="68" />
+    <Part Name="Coil" UId="69" />
+    <Part Name="Contact" UId="70" />
+    <Part Name="Contact" UId="71" />
+    <Part Name="O" UId="72">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="Le" UId="73">
+      <TemplateValue Name="SrcType" Type="Type">Time</TemplateValue>
+    </Part>
+    <Part Name="Contact" UId="74" />
+    <Part Name="Contact" UId="75" />
+    <Part Name="Lt" UId="76">
+      <TemplateValue Name="SrcType" Type="Type">Time</TemplateValue>
+    </Part>
+    <Part Name="O" UId="77">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="Contact" UId="78" />
+    <Part Name="Coil" UId="79" />
+    <Part Name="Contact" UId="80" />
+    <Part Name="Contact" UId="81" />
+    <Part Name="O" UId="82">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="Coil" UId="83" />
+    <Part Name="Coil" UId="84" />
+    <Part Name="Contact" UId="85" />
+    <Part Name="Contact" UId="86" />
+    <Part Name="O" UId="87">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="Coil" UId="88" />
+    <Part Name="Coil" UId="89" />
+    <Part Name="Contact" UId="90" />
+    <Part Name="Coil" UId="91" />
+    <Part Name="Coil" UId="92" />
+  </Parts>
+  <Wires>
+    <Wire UId="94">
+      <Powerrail />
+      <NameCon UId="56" Name="pre" />
+      <NameCon UId="59" Name="pre" />
+      <NameCon UId="63" Name="in" />
+      <NameCon UId="70" Name="in" />
+      <NameCon UId="71" Name="in" />
+      <NameCon UId="80" Name="in" />
+      <NameCon UId="81" Name="in" />
+      <NameCon UId="85" Name="in" />
+      <NameCon UId="86" Name="in" />
+      <NameCon UId="90" Name="in" />
+    </Wire>
+    <Wire UId="95">
+      <IdentCon UId="21" />
+      <NameCon UId="56" Name="in1" />
+    </Wire>
+    <Wire UId="96">
+      <IdentCon UId="22" />
+      <NameCon UId="56" Name="in2" />
+    </Wire>
+    <Wire UId="97">
+      <NameCon UId="56" Name="out" />
+      <NameCon UId="57" Name="in" />
+      <NameCon UId="58" Name="in" />
+    </Wire>
+    <Wire UId="98">
+      <IdentCon UId="23" />
+      <NameCon UId="57" Name="operand" />
+    </Wire>
+    <Wire UId="99">
+      <IdentCon UId="24" />
+      <NameCon UId="58" Name="operand" />
+    </Wire>
+    <Wire UId="100">
+      <IdentCon UId="25" />
+      <NameCon UId="59" Name="in1" />
+    </Wire>
+    <Wire UId="101">
+      <IdentCon UId="26" />
+      <NameCon UId="59" Name="in2" />
+    </Wire>
+    <Wire UId="102">
+      <NameCon UId="59" Name="out" />
+      <NameCon UId="60" Name="IN" />
+    </Wire>
+    <Wire UId="103">
+      <IdentCon UId="27" />
+      <NameCon UId="60" Name="PT" />
+    </Wire>
+    <Wire UId="104">
+      <NameCon UId="60" Name="Q" />
+      <NameCon UId="62" Name="in" />
+    </Wire>
+    <Wire UId="105">
+      <NameCon UId="60" Name="ET" />
+      <OpenCon UId="93" />
+    </Wire>
+    <Wire UId="106">
+      <IdentCon UId="28" />
+      <NameCon UId="62" Name="operand" />
+    </Wire>
+    <Wire UId="107">
+      <NameCon UId="62" Name="out" />
+      <NameCon UId="65" Name="in1" />
+    </Wire>
+    <Wire UId="108">
+      <IdentCon UId="29" />
+      <NameCon UId="63" Name="operand" />
+    </Wire>
+    <Wire UId="109">
+      <NameCon UId="63" Name="out" />
+      <NameCon UId="64" Name="in" />
+    </Wire>
+    <Wire UId="110">
+      <IdentCon UId="30" />
+      <NameCon UId="64" Name="operand" />
+    </Wire>
+    <Wire UId="111">
+      <NameCon UId="64" Name="out" />
+      <NameCon UId="65" Name="in2" />
+    </Wire>
+    <Wire UId="112">
+      <NameCon UId="65" Name="out" />
+      <NameCon UId="66" Name="in" />
+      <NameCon UId="67" Name="in" />
+      <NameCon UId="69" Name="in" />
+    </Wire>
+    <Wire UId="113">
+      <IdentCon UId="31" />
+      <NameCon UId="66" Name="operand" />
+    </Wire>
+    <Wire UId="114">
+      <IdentCon UId="32" />
+      <NameCon UId="67" Name="operand" />
+    </Wire>
+    <Wire UId="115">
+      <NameCon UId="67" Name="out" />
+      <NameCon UId="68" Name="in" />
+    </Wire>
+    <Wire UId="116">
+      <IdentCon UId="33" />
+      <NameCon UId="68" Name="operand" />
+    </Wire>
+    <Wire UId="117">
+      <IdentCon UId="34" />
+      <NameCon UId="69" Name="operand" />
+    </Wire>
+    <Wire UId="118">
+      <IdentCon UId="35" />
+      <NameCon UId="70" Name="operand" />
+    </Wire>
+    <Wire UId="119">
+      <NameCon UId="70" Name="out" />
+      <NameCon UId="72" Name="in1" />
+    </Wire>
+    <Wire UId="120">
+      <IdentCon UId="36" />
+      <NameCon UId="71" Name="operand" />
+    </Wire>
+    <Wire UId="121">
+      <NameCon UId="71" Name="out" />
+      <NameCon UId="72" Name="in2" />
+    </Wire>
+    <Wire UId="122">
+      <NameCon UId="72" Name="out" />
+      <NameCon UId="73" Name="pre" />
+    </Wire>
+    <Wire UId="123">
+      <IdentCon UId="37" />
+      <NameCon UId="73" Name="in1" />
+    </Wire>
+    <Wire UId="124">
+      <IdentCon UId="38" />
+      <NameCon UId="73" Name="in2" />
+    </Wire>
+    <Wire UId="125">
+      <NameCon UId="73" Name="out" />
+      <NameCon UId="74" Name="in" />
+      <NameCon UId="75" Name="in" />
+    </Wire>
+    <Wire UId="126">
+      <IdentCon UId="39" />
+      <NameCon UId="74" Name="operand" />
+    </Wire>
+    <Wire UId="127">
+      <NameCon UId="74" Name="out" />
+      <NameCon UId="77" Name="in1" />
+    </Wire>
+    <Wire UId="128">
+      <IdentCon UId="40" />
+      <NameCon UId="75" Name="operand" />
+    </Wire>
+    <Wire UId="129">
+      <NameCon UId="75" Name="out" />
+      <NameCon UId="76" Name="pre" />
+    </Wire>
+    <Wire UId="130">
+      <IdentCon UId="41" />
+      <NameCon UId="76" Name="in1" />
+    </Wire>
+    <Wire UId="131">
+      <IdentCon UId="42" />
+      <NameCon UId="76" Name="in2" />
+    </Wire>
+    <Wire UId="132">
+      <NameCon UId="76" Name="out" />
+      <NameCon UId="77" Name="in2" />
+    </Wire>
+    <Wire UId="133">
+      <NameCon UId="77" Name="out" />
+      <NameCon UId="78" Name="in" />
+    </Wire>
+    <Wire UId="134">
+      <IdentCon UId="43" />
+      <NameCon UId="78" Name="operand" />
+    </Wire>
+    <Wire UId="135">
+      <NameCon UId="78" Name="out" />
+      <NameCon UId="79" Name="in" />
+    </Wire>
+    <Wire UId="136">
+      <IdentCon UId="44" />
+      <NameCon UId="79" Name="operand" />
+    </Wire>
+    <Wire UId="137">
+      <IdentCon UId="45" />
+      <NameCon UId="80" Name="operand" />
+    </Wire>
+    <Wire UId="138">
+      <NameCon UId="80" Name="out" />
+      <NameCon UId="82" Name="in1" />
+    </Wire>
+    <Wire UId="139">
+      <IdentCon UId="46" />
+      <NameCon UId="81" Name="operand" />
+    </Wire>
+    <Wire UId="140">
+      <NameCon UId="81" Name="out" />
+      <NameCon UId="82" Name="in2" />
+    </Wire>
+    <Wire UId="141">
+      <NameCon UId="82" Name="out" />
+      <NameCon UId="83" Name="in" />
+      <NameCon UId="84" Name="in" />
+    </Wire>
+    <Wire UId="142">
+      <IdentCon UId="47" />
+      <NameCon UId="83" Name="operand" />
+    </Wire>
+    <Wire UId="143">
+      <IdentCon UId="48" />
+      <NameCon UId="84" Name="operand" />
+    </Wire>
+    <Wire UId="144">
+      <IdentCon UId="49" />
+      <NameCon UId="85" Name="operand" />
+    </Wire>
+    <Wire UId="145">
+      <NameCon UId="85" Name="out" />
+      <NameCon UId="87" Name="in1" />
+    </Wire>
+    <Wire UId="146">
+      <IdentCon UId="50" />
+      <NameCon UId="86" Name="operand" />
+    </Wire>
+    <Wire UId="147">
+      <NameCon UId="86" Name="out" />
+      <NameCon UId="87" Name="in2" />
+    </Wire>
+    <Wire UId="148">
+      <NameCon UId="87" Name="out" />
+      <NameCon UId="88" Name="in" />
+      <NameCon UId="89" Name="in" />
+    </Wire>
+    <Wire UId="149">
+      <IdentCon UId="51" />
+      <NameCon UId="88" Name="operand" />
+    </Wire>
+    <Wire UId="150">
+      <IdentCon UId="52" />
+      <NameCon UId="89" Name="operand" />
+    </Wire>
+    <Wire UId="151">
+      <IdentCon UId="53" />
+      <NameCon UId="90" Name="operand" />
+    </Wire>
+    <Wire UId="152">
+      <NameCon UId="90" Name="out" />
+      <NameCon UId="91" Name="in" />
+      <NameCon UId="92" Name="in" />
+    </Wire>
+    <Wire UId="153">
+      <IdentCon UId="54" />
+      <NameCon UId="91" Name="operand" />
+    </Wire>
+    <Wire UId="154">
+      <IdentCon UId="55" />
+      <NameCon UId="92" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="5" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="6" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>pt-BR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="8" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="9" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Buzzer</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>pt-BR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="B" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v3">
+  <Token Text="IF" UId="21" />
+  <Blank UId="22" />
+  <Access Scope="GlobalVariable" UId="23">
+    <Symbol UId="24">
+      <Component Name="VERIFICA INTERLOCK" UId="25" />
+      <Token Text="." UId="26" />
+      <Component Name="ATIVA FOR" UId="27" />
+    </Symbol>
+  </Access>
+  <Blank UId="28" />
+  <Token Text="THEN" UId="29" />
+  <NewLine UId="30" />
+  <Blank Num="4" UId="31" />
+  <Token Text="FOR" UId="32" />
+  <Blank UId="33" />
+  <Access Scope="LocalVariable" UId="34">
+    <Symbol UId="35">
+      <Component Name="INDEX_SIGNAL" UId="36" />
+    </Symbol>
+  </Access>
+  <Blank UId="37" />
+  <Token Text=":=" UId="38" />
+  <Blank UId="39" />
+  <Access Scope="LiteralConstant" UId="40">
+    <Constant UId="41">
+      <ConstantValue UId="43">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="44" />
+  <Token Text="TO" UId="45" />
+  <Blank UId="46" />
+  <Access Scope="GlobalConstant" UId="47">
+    <Constant Name="Station_Setup_Const" UId="48" />
+  </Access>
+  <Blank UId="51" />
+  <Token Text="DO" UId="52" />
+  <NewLine UId="53" />
+  <Blank Num="8" UId="54" />
+  <Token Text="FOR" UId="55" />
+  <Blank UId="56" />
+  <Access Scope="LocalVariable" UId="57">
+    <Symbol UId="58">
+      <Component Name="INDEX_SIGNAL1" UId="59" />
+    </Symbol>
+  </Access>
+  <Blank UId="60" />
+  <Token Text=":=" UId="61" />
+  <Blank UId="62" />
+  <Access Scope="LiteralConstant" UId="63">
+    <Constant UId="64">
+      <ConstantValue UId="66">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="67" />
+  <Token Text="TO" UId="68" />
+  <Blank UId="69" />
+  <Access Scope="GlobalConstant" UId="70">
+    <Constant Name="Equipment_Setup_Const" UId="71" />
+  </Access>
+  <Blank UId="74" />
+  <Token Text="DO" UId="75" />
+  <NewLine UId="76" />
+  <Blank Num="12" UId="77" />
+  <Token Text="FOR" UId="78" />
+  <Blank UId="79" />
+  <Access Scope="LocalVariable" UId="80">
+    <Symbol UId="81">
+      <Component Name="INDEX_SIGNAL2" UId="82" />
+    </Symbol>
+  </Access>
+  <Blank UId="83" />
+  <Token Text=":=" UId="84" />
+  <Blank UId="85" />
+  <Access Scope="LiteralConstant" UId="86">
+    <Constant UId="87">
+      <ConstantValue UId="89">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="90" />
+  <Token Text="TO" UId="91" />
+  <Blank UId="92" />
+  <Access Scope="GlobalConstant" UId="93">
+    <Constant Name="Signal_Setup_Const" UId="94" />
+  </Access>
+  <Blank UId="97" />
+  <Token Text="DO" UId="98" />
+  <NewLine UId="99" />
+  <Blank Num="16" UId="100" />
+  <Token Text="IF" UId="101" />
+  <Blank UId="102" />
+  <Access Scope="GlobalVariable" UId="103">
+    <Symbol UId="104">
+      <Component Name="Signals" UId="105">
+        <BooleanAttribute Name="HasQuotes" UId="106">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="107" />
+      <Component Name="ProcessInterlock_APLC_Input" UId="108">
+        <Token Text="[" UId="109" />
+        <Access Scope="LiteralConstant" UId="110">
+          <Constant UId="111">
+            <ConstantValue UId="113">1</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="114" />
+      </Component>
+      <Token Text="." UId="115" />
+      <Component Name="ModezoneInterlock_APLC_Input" UId="116">
+        <Token Text="[" UId="117" />
+        <Access Scope="LiteralConstant" UId="118">
+          <Constant UId="119">
+            <ConstantValue UId="121">2</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="122" />
+      </Component>
+      <Token Text="." UId="123" />
+      <Component Name="StationInterlock_APLC_Input" UId="124">
+        <Token Text="[" UId="125" />
+        <Access Scope="LocalVariable" UId="126">
+          <Symbol UId="127">
+            <Component Name="INDEX_SIGNAL" UId="128" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="129" />
+      </Component>
+      <NewLine UId="130" />
+      <Blank Num="20" UId="131" />
+      <Token Text="." UId="132" />
+      <Component Name="PositionInterlock_APLC_Input" UId="133">
+        <Token Text="[" UId="134" />
+        <Access Scope="LiteralConstant" UId="135">
+          <Constant UId="136">
+            <ConstantValue UId="138">1</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="139" />
+      </Component>
+      <Token Text="." UId="140" />
+      <Component Name="EquipmentInterlock_APLC_Input" UId="141">
+        <Token Text="[" UId="142" />
+        <Access Scope="LocalVariable" UId="143">
+          <Symbol UId="144">
+            <Component Name="INDEX_SIGNAL1" UId="145" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="146" />
+      </Component>
+      <Token Text="." UId="147" />
+      <Component Name="SignalInterlock_APLC_Input" UId="148">
+        <Token Text="[" UId="149" />
+        <Access Scope="LocalVariable" UId="150">
+          <Symbol UId="151">
+            <Component Name="INDEX_SIGNAL2" UId="152" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="153" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank UId="154" />
+  <Token Text="=" UId="155" />
+  <Blank UId="156" />
+  <Access Scope="LiteralConstant" UId="157">
+    <Constant UId="158">
+      <ConstantValue UId="160">TRUE</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="161" />
+  <Token Text="THEN" UId="162" />
+  <NewLine UId="163" />
+  <Blank Num="20" UId="164" />
+  <Token Text="FOR" UId="165" />
+  <Blank UId="166" />
+  <Access Scope="LocalVariable" UId="167">
+    <Symbol UId="168">
+      <Component Name="INDEX_VERIFICA" UId="169" />
+    </Symbol>
+  </Access>
+  <Blank UId="170" />
+  <Token Text=":=" UId="171" />
+  <Blank UId="172" />
+  <Access Scope="LiteralConstant" UId="173">
+    <Constant UId="174">
+      <ConstantValue UId="176">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="177" />
+  <Token Text="TO" UId="178" />
+  <Blank UId="179" />
+  <Access Scope="LiteralConstant" UId="180">
+    <Constant UId="181">
+      <ConstantValue UId="183">10</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="184" />
+  <Token Text="DO" UId="185" />
+  <NewLine UId="186" />
+  <Blank Num="24" UId="187" />
+  <Token Text="IF" UId="188" />
+  <Blank UId="189" />
+  <Access Scope="GlobalVariable" UId="190">
+    <Symbol UId="191">
+      <Component Name="VERIFICA INTERLOCK" UId="192" />
+      <Token Text="." UId="193" />
+      <Component Name="INTERLOCK" UId="194">
+        <Token Text="[" UId="195" />
+        <Access Scope="LocalVariable" UId="196">
+          <Symbol UId="197">
+            <Component Name="INDEX_VERIFICA" UId="198" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="199" />
+      </Component>
+      <Token Text="." UId="200" />
+      <Component Name="STATION" UId="201" />
+    </Symbol>
+  </Access>
+  <Blank UId="202" />
+  <Token Text="=" UId="203" />
+  <Blank UId="204" />
+  <Access Scope="LiteralConstant" UId="205">
+    <Constant UId="206">
+      <ConstantValue UId="208">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="209" />
+  <Token Text="THEN" UId="210" />
+  <NewLine UId="211" />
+  <Blank Num="28" UId="212" />
+  <Access Scope="GlobalVariable" UId="213">
+    <Symbol UId="214">
+      <Component Name="VERIFICA INTERLOCK" UId="215" />
+      <Token Text="." UId="216" />
+      <Component Name="INTERLOCK" UId="217">
+        <Token Text="[" UId="218" />
+        <Access Scope="LocalVariable" UId="219">
+          <Symbol UId="220">
+            <Component Name="INDEX_VERIFICA" UId="221" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="222" />
+      </Component>
+      <Token Text="." UId="223" />
+      <Component Name="STATION" UId="224" />
+    </Symbol>
+  </Access>
+  <Blank UId="225" />
+  <Token Text=":=" UId="226" />
+  <Blank UId="227" />
+  <Access Scope="LocalVariable" UId="228">
+    <Symbol UId="229">
+      <Component Name="INDEX_SIGNAL" UId="230" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="231" />
+  <NewLine UId="232" />
+  <Blank Num="28" UId="233" />
+  <Access Scope="GlobalVariable" UId="234">
+    <Symbol UId="235">
+      <Component Name="VERIFICA INTERLOCK" UId="236" />
+      <Token Text="." UId="237" />
+      <Component Name="INTERLOCK" UId="238">
+        <Token Text="[" UId="239" />
+        <Access Scope="LocalVariable" UId="240">
+          <Symbol UId="241">
+            <Component Name="INDEX_VERIFICA" UId="242" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="243" />
+      </Component>
+      <Token Text="." UId="244" />
+      <Component Name="EQUIPAMENTO" UId="245" />
+    </Symbol>
+  </Access>
+  <Blank UId="246" />
+  <Token Text=":=" UId="247" />
+  <Blank UId="248" />
+  <Access Scope="LocalVariable" UId="249">
+    <Symbol UId="250">
+      <Component Name="INDEX_SIGNAL1" UId="251" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="252" />
+  <NewLine UId="253" />
+  <Blank Num="28" UId="254" />
+  <Access Scope="GlobalVariable" UId="255">
+    <Symbol UId="256">
+      <Component Name="VERIFICA INTERLOCK" UId="257" />
+      <Token Text="." UId="258" />
+      <Component Name="INTERLOCK" UId="259">
+        <Token Text="[" UId="260" />
+        <Access Scope="LocalVariable" UId="261">
+          <Symbol UId="262">
+            <Component Name="INDEX_VERIFICA" UId="263" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="264" />
+      </Component>
+      <Token Text="." UId="265" />
+      <Component Name="SINAL" UId="266" />
+    </Symbol>
+  </Access>
+  <Blank UId="267" />
+  <Token Text=":=" UId="268" />
+  <Blank UId="269" />
+  <Access Scope="LocalVariable" UId="270">
+    <Symbol UId="271">
+      <Component Name="INDEX_SIGNAL2" UId="272" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="273" />
+  <NewLine UId="274" />
+  <Blank Num="28" UId="275" />
+  <Token Text="EXIT" UId="276" />
+  <Token Text=";" UId="277" />
+  <NewLine UId="278" />
+  <Blank Num="24" UId="279" />
+  <Token Text="END_IF" UId="280" />
+  <Token Text=";" UId="281" />
+  <NewLine UId="282" />
+  <Blank Num="20" UId="283" />
+  <Token Text="END_FOR" UId="284" />
+  <Token Text=";" UId="285" />
+  <NewLine UId="286" />
+  <Blank Num="16" UId="287" />
+  <Token Text="END_IF" UId="288" />
+  <Token Text=";" UId="289" />
+  <NewLine UId="290" />
+  <Blank Num="16" UId="291" />
+  <Token Text="END_FOR" UId="292" />
+  <Token Text=";" UId="293" />
+  <NewLine UId="294" />
+  <Blank Num="12" UId="295" />
+  <Token Text="END_FOR" UId="296" />
+  <Token Text=";" UId="297" />
+  <NewLine UId="298" />
+  <Blank Num="8" UId="299" />
+  <Token Text="END_FOR" UId="300" />
+  <Token Text=";" UId="301" />
+  <NewLine UId="302" />
+  <Blank Num="8" UId="303" />
+  <Access Scope="GlobalVariable" UId="304">
+    <Symbol UId="305">
+      <Component Name="VERIFICA INTERLOCK" UId="306" />
+      <Token Text="." UId="307" />
+      <Component Name="ATIVA FOR" UId="308" />
+    </Symbol>
+  </Access>
+  <Blank UId="309" />
+  <Token Text=":=" UId="310" />
+  <Blank UId="311" />
+  <Access Scope="LiteralConstant" UId="312">
+    <Constant UId="313">
+      <ConstantValue UId="315">FALSE</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="316" />
+  <NewLine UId="317" />
+  <Blank Num="4" UId="318" />
+  <Token Text="END_IF" UId="319" />
+  <Token Text=";" UId="320" />
+  <NewLine UId="321" />
+  <Blank Num="4" UId="322" />
+  <NewLine UId="323" />
+  <Blank Num="20" UId="324" />
+  <NewLine UId="325" />
+  <Blank Num="20" UId="326" />
+  <NewLine UId="327" />
+  <Blank Num="4" UId="328" />
+</StructuredText></NetworkSource>
+          <ProgrammingLanguage>SCL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="C" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>pt-BR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="F" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="10" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>pt-BR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="12" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="CALENDAR_OUTPUT_DB" />
+        <Component Name="WorkhopCalendar" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="ProcessCalendar" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="ModeZoneCalendar" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="ShiftActivate" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="Signals" />
+        <Component Name="ProcessInterlock_APLC_Input" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="ModezoneInterlock_APLC_Input" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="StationInterlock_APLC_Input" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>4</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="PositionInterlock_APLC_Input" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="EquipmentInterlock_APLC_Input" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="SignalInterlock_APLC_Input" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>7</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="count_LD" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="AREA_TaktTime.SIMPLE_INTERFACE_TAKTTIME_INPUT" />
+        <Component Name="TaktTimeWorkhop_APLC_Out" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="TaktTimeProcess_APLC_Out" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="TaktTimeModeZone_APLC_Out" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="Timer" />
+      </Symbol>
+    </Access>
+    <Access Scope="TypedConstant" UId="25">
+      <Constant>
+        <ConstantValue>T#0s</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="26">
+      <Symbol>
+        <Component Name="Put Sinais de Interlock Falcare" />
+        <Component Name="TURNO ATIVO FALCARE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="27">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="28">
+      <Symbol>
+        <Component Name="COUNT_BARREIRA_LD" />
+        <Component Name="CV" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="29">
+      <Symbol>
+        <Component Name="DB_IG_ETR_RESERVA" />
+        <Component Name="Real" />
+        <Component Name="Real[2]" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="30">
+      <Symbol>
+        <Component Name="CALENDAR_OUTPUT_DB" />
+        <Component Name="WorkhopCalendar" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="ProcessCalendar" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="ModeZoneCalendar" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="ShiftActivate" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="31">
+      <Symbol>
+        <Component Name="Signals" />
+        <Component Name="ProcessInterlock_APLC_Input" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="ModezoneInterlock_APLC_Input" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="StationInterlock_APLC_Input" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>4</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="PositionInterlock_APLC_Input" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="EquipmentInterlock_APLC_Input" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="SignalInterlock_APLC_Input" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>6</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="32">
+      <Symbol>
+        <Component Name="count_LE" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="33">
+      <Symbol>
+        <Component Name="AREA_TaktTime.SIMPLE_INTERFACE_TAKTTIME_INPUT" />
+        <Component Name="TaktTimeWorkhop_APLC_Out" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="TaktTimeProcess_APLC_Out" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="TaktTimeModeZone_APLC_Out" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="Timer" />
+      </Symbol>
+    </Access>
+    <Access Scope="TypedConstant" UId="34">
+      <Constant>
+        <ConstantValue>T#0s</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="35">
+      <Symbol>
+        <Component Name="Put Sinais de Interlock Falcare" />
+        <Component Name="TURNO ATIVO FALCARE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="36">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="37">
+      <Symbol>
+        <Component Name="COUNT_BARREIRA_LE" />
+        <Component Name="CV" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="38">
+      <Symbol>
+        <Component Name="DB_IG_ETR_RESERVA" />
+        <Component Name="Real" />
+        <Component Name="Real[3]" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="39" />
+    <Part Name="PContact" UId="40" />
+    <Part Name="Lt" UId="41">
+      <TemplateValue Name="SrcType" Type="Type">Time</TemplateValue>
+    </Part>
+    <Part Name="Contact" UId="42">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="CTU" Version="1.0" UId="43">
+      <Instance Scope="GlobalVariable" UId="44">
+        <Component Name="COUNT_BARREIRA_LD" />
+      </Instance>
+      <TemplateValue Name="value_type" Type="Type">Int</TemplateValue>
+    </Part>
+    <Part Name="Convert" UId="45" DisabledENO="true">
+      <TemplateValue Name="SrcType" Type="Type">Int</TemplateValue>
+      <TemplateValue Name="DestType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Contact" UId="46" />
+    <Part Name="PContact" UId="47" />
+    <Part Name="Lt" UId="48">
+      <TemplateValue Name="SrcType" Type="Type">Time</TemplateValue>
+    </Part>
+    <Part Name="Contact" UId="49">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="CTU" Version="1.0" UId="50">
+      <Instance Scope="GlobalVariable" UId="51">
+        <Component Name="COUNT_BARREIRA_LE" />
+      </Instance>
+      <TemplateValue Name="value_type" Type="Type">Int</TemplateValue>
+    </Part>
+    <Part Name="Convert" UId="52" DisabledENO="true">
+      <TemplateValue Name="SrcType" Type="Type">Int</TemplateValue>
+      <TemplateValue Name="DestType" Type="Type">Real</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="55">
+      <Powerrail />
+      <NameCon UId="39" Name="in" />
+      <NameCon UId="42" Name="in" />
+      <NameCon UId="45" Name="en" />
+      <NameCon UId="46" Name="in" />
+      <NameCon UId="49" Name="in" />
+      <NameCon UId="52" Name="en" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="21" />
+      <NameCon UId="39" Name="operand" />
+    </Wire>
+    <Wire UId="57">
+      <NameCon UId="39" Name="out" />
+      <NameCon UId="40" Name="pre" />
+    </Wire>
+    <Wire UId="58">
+      <IdentCon UId="23" />
+      <NameCon UId="40" Name="bit" />
+    </Wire>
+    <Wire UId="59">
+      <IdentCon UId="22" />
+      <NameCon UId="40" Name="operand" />
+    </Wire>
+    <Wire UId="60">
+      <NameCon UId="40" Name="out" />
+      <NameCon UId="41" Name="pre" />
+    </Wire>
+    <Wire UId="61">
+      <IdentCon UId="24" />
+      <NameCon UId="41" Name="in1" />
+    </Wire>
+    <Wire UId="62">
+      <IdentCon UId="25" />
+      <NameCon UId="41" Name="in2" />
+    </Wire>
+    <Wire UId="63">
+      <NameCon UId="41" Name="out" />
+      <NameCon UId="43" Name="CU" />
+    </Wire>
+    <Wire UId="64">
+      <IdentCon UId="26" />
+      <NameCon UId="42" Name="operand" />
+    </Wire>
+    <Wire UId="65">
+      <NameCon UId="42" Name="out" />
+      <NameCon UId="43" Name="R" />
+    </Wire>
+    <Wire UId="66">
+      <IdentCon UId="27" />
+      <NameCon UId="43" Name="PV" />
+    </Wire>
+    <Wire UId="67">
+      <NameCon UId="43" Name="CV" />
+      <OpenCon UId="53" />
+    </Wire>
+    <Wire UId="68">
+      <IdentCon UId="28" />
+      <NameCon UId="45" Name="in" />
+    </Wire>
+    <Wire UId="69">
+      <NameCon UId="45" Name="out" />
+      <IdentCon UId="29" />
+    </Wire>
+    <Wire UId="70">
+      <IdentCon UId="30" />
+      <NameCon UId="46" Name="operand" />
+    </Wire>
+    <Wire UId="71">
+      <NameCon UId="46" Name="out" />
+      <NameCon UId="47" Name="pre" />
+    </Wire>
+    <Wire UId="72">
+      <IdentCon UId="32" />
+      <NameCon UId="47" Name="bit" />
+    </Wire>
+    <Wire UId="73">
+      <IdentCon UId="31" />
+      <NameCon UId="47" Name="operand" />
+    </Wire>
+    <Wire UId="74">
+      <NameCon UId="47" Name="out" />
+      <NameCon UId="48" Name="pre" />
+    </Wire>
+    <Wire UId="75">
+      <IdentCon UId="33" />
+      <NameCon UId="48" Name="in1" />
+    </Wire>
+    <Wire UId="76">
+      <IdentCon UId="34" />
+      <NameCon UId="48" Name="in2" />
+    </Wire>
+    <Wire UId="77">
+      <NameCon UId="48" Name="out" />
+      <NameCon UId="50" Name="CU" />
+    </Wire>
+    <Wire UId="78">
+      <IdentCon UId="35" />
+      <NameCon UId="49" Name="operand" />
+    </Wire>
+    <Wire UId="79">
+      <NameCon UId="49" Name="out" />
+      <NameCon UId="50" Name="R" />
+    </Wire>
+    <Wire UId="80">
+      <IdentCon UId="36" />
+      <NameCon UId="50" Name="PV" />
+    </Wire>
+    <Wire UId="81">
+      <NameCon UId="50" Name="CV" />
+      <OpenCon UId="54" />
+    </Wire>
+    <Wire UId="82">
+      <IdentCon UId="37" />
+      <NameCon UId="52" Name="in" />
+    </Wire>
+    <Wire UId="83">
+      <NameCon UId="52" Name="out" />
+      <IdentCon UId="38" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="13" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="15" CompositionName="Items">
+                <AttributeList>
+                  <Culture>pt-BR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="16" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="17" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="18" CompositionName="Items">
+                <AttributeList>
+                  <Culture>pt-BR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="19" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="1A" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="1B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>pt-BR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1D" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="1E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>pt-BR</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="20" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="21" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="22" CompositionName="Items">
+            <AttributeList>
+              <Culture>pt-BR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FC>
+</Document>

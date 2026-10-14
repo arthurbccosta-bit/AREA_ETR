@@ -1,0 +1,12 @@
+﻿FUNCTION "Clock" : Void
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_TEMP 
+      ret : Int;
+   END_VAR
+
+
+BEGIN
+	#ret := RD_LOC_T("General_functions".Clock.DateTime);
+END_FUNCTION
+

@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V18" />
+  <SW.Types.PlcStruct ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="None">
+    <Member Name="KPI_Informations" Datatype="Struct">
+      <Member Name="Full_AvailabilityShift" Datatype="Array[1..&quot;ShiftList_Setup_Const&quot;] of Time">
+        <Subelement Path="1">
+          <StartValue>T#9H_15M</StartValue>
+        </Subelement>
+        <Subelement Path="2">
+          <StartValue>T#0MS</StartValue>
+        </Subelement>
+        <Subelement Path="3">
+          <StartValue>T#0MS</StartValue>
+        </Subelement>
+      </Member>
+      <Member Name="Full_AvailabilityDay" Datatype="Time">
+        <StartValue>T#9H_15M</StartValue>
+      </Member>
+      <Member Name="Net_AvailabilityShift" Datatype="Array[1..&quot;ShiftList_Setup_Const&quot;] of Time">
+        <Subelement Path="1">
+          <StartValue>T#9H_15M</StartValue>
+        </Subelement>
+        <Subelement Path="2">
+          <StartValue>T#0MS</StartValue>
+        </Subelement>
+        <Subelement Path="3">
+          <StartValue>T#0MS</StartValue>
+        </Subelement>
+      </Member>
+      <Member Name="Net_AvailabilityDay" Datatype="Time">
+        <StartValue>T#9H_15M</StartValue>
+      </Member>
+      <Member Name="Total_StopPlannedShift" Datatype="Array[1..&quot;ShiftList_Setup_Const&quot;] of Time">
+        <Subelement Path="1">
+          <StartValue>T#0MS</StartValue>
+        </Subelement>
+        <Subelement Path="2">
+          <StartValue>T#0MS</StartValue>
+        </Subelement>
+        <Subelement Path="3">
+          <StartValue>T#0MS</StartValue>
+        </Subelement>
+      </Member>
+      <Member Name="Total_StopPlannedDay" Datatype="Time">
+        <StartValue>T#0MS</StartValue>
+      </Member>
+      <Member Name="StopPlanned_Executed_Shift" Datatype="Array[1..&quot;ShiftList_Setup_Const&quot;] of Time">
+        <Subelement Path="1">
+          <StartValue>T#1H_35M</StartValue>
+        </Subelement>
+        <Subelement Path="2">
+          <StartValue>T#1H_10M</StartValue>
+        </Subelement>
+        <Subelement Path="3">
+          <StartValue>T#0MS</StartValue>
+        </Subelement>
+      </Member>
+      <Member Name="StopPlanned_Executed_Day" Datatype="Time">
+        <StartValue>T#2H_45M</StartValue>
+      </Member>
+      <Member Name="NextStopPlanned" Datatype="Date_And_Time">
+        <StartValue>DT#2000-01-10-00:00:00</StartValue>
+      </Member>
+      <Member Name="NextStopPlanned_Index" Datatype="Int">
+        <StartValue>11</StartValue>
+      </Member>
+      <Member Name="RemaningTimeToStopPlanned" Datatype="Time">
+        <StartValue>T#8D_15H_45M_48S_109MS</StartValue>
+      </Member>
+      <Member Name="NextStopPlannedInRealTime" Datatype="Time">
+        <StartValue>T#8H_14M_11S_891MS</StartValue>
+      </Member>
+      <Member Name="RemaningCycleToStoPplanned" Datatype="DInt">
+        <StartValue>2_139_095_040</StartValue>
+      </Member>
+      <Member Name="Total_StopTimeShift" Datatype="Array[1..&quot;ShiftList_Setup_Const&quot;] of Time">
+        <Subelement Path="1">
+          <StartValue>T#-1H_11M_58S</StartValue>
+        </Subelement>
+        <Subelement Path="2">
+          <StartValue>T#-29M_30S</StartValue>
+        </Subelement>
+        <Subelement Path="3">
+          <StartValue>T#0MS</StartValue>
+        </Subelement>
+      </Member>
+      <Member Name="Total_StopTimeDay" Datatype="Time">
+        <StartValue>T#-1H_41M_28S</StartValue>
+      </Member>
+      <Member Name="GoalOfShift" Datatype="Array[1..&quot;ShiftList_Setup_Const&quot;] of Int">
+        <Subelement Path="1">
+          <StartValue>164</StartValue>
+        </Subelement>
+        <Subelement Path="2">
+          <StartValue>35</StartValue>
+        </Subelement>
+        <Subelement Path="3">
+          <StartValue>0</StartValue>
+        </Subelement>
+      </Member>
+      <Member Name="GoalOfDay" Datatype="Int">
+        <StartValue>199</StartValue>
+      </Member>
+      <Member Name="TaktStandardByShift" Datatype="Array[1..&quot;ShiftList_Setup_Const&quot;] of Time">
+        <Subelement Path="1">
+          <StartValue>T#2M_15S</StartValue>
+        </Subelement>
+        <Subelement Path="2">
+          <StartValue>T#10M</StartValue>
+        </Subelement>
+        <Subelement Path="3">
+          <StartValue>T#0MS</StartValue>
+        </Subelement>
+      </Member>
+    </Member>
+    <Member Name="KPI_Results" Datatype="Struct">
+      <Member Name="Production_Status" Datatype="Int">
+        <StartValue>0</StartValue>
+      </Member>
+      <Member Name="MaxProductionCapacity_Shift" Datatype="Array[1..&quot;ShiftList_Setup_Const&quot;] of Int">
+        <Subelement Path="1">
+          <StartValue>246</StartValue>
+        </Subelement>
+        <Subelement Path="2">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="3">
+          <StartValue>0</StartValue>
+        </Subelement>
+      </Member>
+      <Member Name="MaxProductionCapacity_Day" Datatype="Int">
+        <StartValue>246</StartValue>
+      </Member>
+      <Member Name="TimeToProductionDone_Shift" Datatype="Array[1..&quot;ShiftList_Setup_Const&quot;] of Time">
+        <Subelement Path="1">
+          <StartValue>T#0MS</StartValue>
+        </Subelement>
+        <Subelement Path="2">
+          <StartValue>T#0MS</StartValue>
+        </Subelement>
+        <Subelement Path="3">
+          <StartValue>T#0MS</StartValue>
+        </Subelement>
+      </Member>
+      <Member Name="TimeToProductionDone_Day" Datatype="Time">
+        <StartValue>T#0MS</StartValue>
+      </Member>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <Name>TargetProductionMdz_in</Name>
+      <Namespace />
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>pt-BR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>pt-BR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Types.PlcStruct>
+</Document>

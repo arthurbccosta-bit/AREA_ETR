@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V18" />
+  <SW.Types.PlcStruct ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="None">
+    <Member Name="Connection_ID" Datatype="Word" />
+    <Member Name="R_ID" Datatype="CONN_R_ID" />
+    <Member Name="REQ" Datatype="Bool" />
+    <Member Name="Len" Datatype="Word" />
+    <Member Name="Result" Datatype="Struct">
+      <Member Name="DONE" Datatype="Bool" />
+      <Member Name="ERROR" Datatype="Bool" />
+      <Member Name="STATUS" Datatype="Word" />
+    </Member>
+    <Member Name="Diagnostic" Datatype="Struct">
+      <Member Name="countDone" Datatype="Int" />
+      <Member Name="countError" Datatype="Int" />
+      <Member Name="memStatus" Datatype="Word" />
+    </Member>
+  </Section>
+</Sections></Interface>
+      <Name>Comm</Name>
+      <Namespace />
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>pt-BR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>pt-BR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Types.PlcStruct>
+</Document>

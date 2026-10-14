@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V18" />
+  <SW.Types.PlcStruct ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="None">
+    <Member Name="POPID" Datatype="String[10]">
+      <Comment>
+        <MultiLanguageText Lang="en-US">POPID</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="CU" Datatype="String[10]">
+      <Comment>
+        <MultiLanguageText Lang="en-US">CU</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="AGVNumber" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Número AGV</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="ProductOK" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Produto recebido OK</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="ProductNOK" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Falha produto recebido Scala</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="AGVRedCard" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">AGV com trabalho</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Spare4" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Reserva</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Spare5" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Reserva</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Spare6" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Reserva</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Spare7" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Reserva</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Spare8" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Reserva</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Spare9" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Reserva</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Spare10" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Reserva</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Spare11" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Reserva</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Spare12" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Reserva</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Spare13" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Reserva</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Spare14" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Reserva</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Spare15" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Reserva</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Spare16" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Reserva</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <Name>Udt_Data_AGVToScala</Name>
+      <Namespace />
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>pt-BR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>pt-BR</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Types.PlcStruct>
+</Document>
